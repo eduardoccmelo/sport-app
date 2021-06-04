@@ -36,7 +36,7 @@ export default function NewPlayer() {
           Add
         </button>
       </form>
-      <div>{renderPlayers()}</div>
+      <div className="listOfPlayers">{renderPlayers()}</div>
     </div>
   );
 }
