@@ -21,7 +21,7 @@ body {
 }
 
 .pageMain {
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 .pageFooter {
@@ -36,6 +36,18 @@ body {
   height: 50px;
 }
 
+.newPlayer {
+  margin-bottom: 10px;
+}
+
 .newPlayerButton {
   margin-left: 5px;
+}
+
+.playersCard {
+  background-color: white;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

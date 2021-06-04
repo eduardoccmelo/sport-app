@@ -1,9 +1,9 @@
-import NewPlayer from "./NewPlayer";
+import NewPlayers from "./NewPlayers";
 
 export default function Main() {
   return (
     <div className="pageMain">
-      <NewPlayer />
+      <NewPlayers />
     </div>
   );
 }
