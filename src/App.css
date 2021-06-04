@@ -1,0 +1,41 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background-image: url(https://gallery.yopriceville.com/var/albums/Backgrounds/Soccer_Background.jpg?m=1456062663);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 200%;
+}
+
+.pageHeader {
+  background-color: rgb(3, 3, 124);
+  color: white;
+  height: 50px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageMain {
+  background-color: yellow;
+}
+
+.pageFooter {
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.newPlayerButton {
+  margin-left: 5px;
+}
