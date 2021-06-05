@@ -18,6 +18,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .pageMain {
@@ -69,4 +70,5 @@ body {
   color: white;
   position: absolute;
   right: 0;
+  cursor: pointer;
 }
