@@ -1,37 +1,48 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NewPlayerCard from "./newPlayerCard";
+import {
+  getPlayersFromLocalStorage,
+  addPlayerToLocalStorage,
+  removePlayerFromLocalStorage,
+} from "../services/playersStorage";
 
 export default function NewPlayer() {
   const [newPlayers, setNewPlayers] = useState([]);
 
+  useEffect(() => {
+    const myPlayers = getPlayersFromLocalStorage();
+    setNewPlayers(myPlayers);
+  }, []);
+
   function handleAddPlayerClick(e) {
     e.preventDefault();
     const inputValue = e.target.addPlayer.value;
-    const allPlayers = [...newPlayers, { name: inputValue }];
-    setNewPlayers(allPlayers);
+    addPlayerToLocalStorage({
+      name: inputValue,
+    });
+    const myPlayers = getPlayersFromLocalStorage();
+    setNewPlayers(myPlayers);
     e.target.addPlayer.value = "";
   }
 
   function handleRemovePlayer(name) {
-    const newListOfPlayers = newPlayers.filter((player) => {
-      return player.name !== name;
-    });
-    setNewPlayers(newListOfPlayers);
+    removePlayerFromLocalStorage(name);
+    const myPlayers = getPlayersFromLocalStorage();
+    setNewPlayers(myPlayers);
   }
 
   console.log(newPlayers);
 
   function renderPlayers() {
-    const allPlayers = newPlayers.map((player) => {
+    return newPlayers.map((player) => {
       return (
         <NewPlayerCard
-          name={player.name}
           key={player.name}
+          name={player.name}
           onClickToRemove={handleRemovePlayer}
         />
       );
     });
-    return allPlayers;
   }
 
   return (

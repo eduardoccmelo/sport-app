@@ -7,7 +7,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  background-size: 200%;
+  background-size: 250%;
 }
 
 .pageHeader {
@@ -19,10 +19,6 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-}
-
-.pageMain {
-  /* background-color: yellow; */
 }
 
 .listOfPlayers {
