@@ -8,6 +8,7 @@ import {
 
 export default function NewPlayer() {
   const [newPlayers, setNewPlayers] = useState([]);
+  const [numberOfPlayers, setNumberOfPlayers] = useState(0);
 
   useEffect(() => {
     const myPlayers = getPlayersFromLocalStorage();
@@ -22,6 +23,7 @@ export default function NewPlayer() {
     });
     const myPlayers = getPlayersFromLocalStorage();
     setNewPlayers(myPlayers);
+    setNumberOfPlayers(numberOfPlayers + 1);
     e.target.addPlayer.value = "";
   }
 
@@ -29,6 +31,7 @@ export default function NewPlayer() {
     removePlayerFromLocalStorage(name);
     const myPlayers = getPlayersFromLocalStorage();
     setNewPlayers(myPlayers);
+    setNumberOfPlayers(numberOfPlayers - 1);
   }
 
   console.log(newPlayers);
@@ -54,6 +57,7 @@ export default function NewPlayer() {
             name="addPlayer"
             id="addPlayer"
             placeholder="New Player"
+            required
           ></input>
         </label>
         <button className="newPlayerButton" type="submit">
@@ -61,6 +65,9 @@ export default function NewPlayer() {
         </button>
       </form>
       <div className="listOfPlayers">{renderPlayers()}</div>
+      <div className="numberOfPlayers">
+        Number of Players: {numberOfPlayers}
+      </div>
     </div>
   );
 }

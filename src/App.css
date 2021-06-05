@@ -28,7 +28,7 @@ body {
   justify-content: center;
 }
 
-.pageFooter {
+.numberOfPlayers {
   background-color: green;
   position: absolute;
   bottom: 0;
@@ -38,6 +38,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 50px;
+  z-index: 0;
 }
 
 .newPlayer {
