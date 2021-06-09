@@ -5,6 +5,11 @@ import {
   addPlayerToLocalStorage,
   removePlayerFromLocalStorage,
 } from "../services/playersStorage";
+import {
+  getPlayersCountFromLocalStorage,
+  addPlayerCountToLocalStorage,
+  removePlayerCountFromLocalStorage,
+} from "../services/counterStorage";
 
 export default function NewPlayer() {
   const [newPlayers, setNewPlayers] = useState([]);
@@ -13,6 +18,13 @@ export default function NewPlayer() {
   useEffect(() => {
     const myPlayers = getPlayersFromLocalStorage();
     setNewPlayers(myPlayers);
+    const myPlayersCount = getPlayersCountFromLocalStorage();
+    console.log(myPlayersCount);
+    if (myPlayersCount.length === 0) {
+      setNumberOfPlayers(Number("0"));
+    } else {
+      setNumberOfPlayers(myPlayersCount);
+    }
   }, []);
 
   function handleAddPlayerClick(e) {
@@ -25,6 +37,7 @@ export default function NewPlayer() {
     setNewPlayers(myPlayers);
     setNumberOfPlayers(numberOfPlayers + 1);
     e.target.addPlayer.value = "";
+    addPlayerCountToLocalStorage();
   }
 
   function handleRemovePlayer(name) {
@@ -32,6 +45,7 @@ export default function NewPlayer() {
     const myPlayers = getPlayersFromLocalStorage();
     setNewPlayers(myPlayers);
     setNumberOfPlayers(numberOfPlayers - 1);
+    removePlayerCountFromLocalStorage();
   }
 
   function renderPlayers() {
