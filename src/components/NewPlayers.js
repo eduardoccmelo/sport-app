@@ -34,8 +34,6 @@ export default function NewPlayer() {
     setNumberOfPlayers(numberOfPlayers - 1);
   }
 
-  console.log(newPlayers);
-
   function renderPlayers() {
     return newPlayers.map((player) => {
       return (
