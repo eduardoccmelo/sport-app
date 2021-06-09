@@ -1,0 +1,71 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background-image: url(https://gallery.yopriceville.com/var/albums/Backgrounds/Soccer_Background.jpg?m=1456062663);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 250%;
+}
+
+.pageHeader {
+  background-color: rgb(3, 3, 124);
+  color: white;
+  height: 50px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.listOfPlayers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.numberOfPlayers {
+  background-color: green;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  z-index: 0;
+}
+
+.newPlayer {
+  margin-bottom: 10px;
+}
+
+.newPlayerButton {
+  margin-left: 5px;
+}
+
+.playersCard {
+  background-color: white;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 20px;
+  position: relative;
+}
+
+.playerCardDelete {
+  width: 20px;
+  height: 20px;
+  background-color: rgb(142, 14, 14);
+  color: white;
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+}
