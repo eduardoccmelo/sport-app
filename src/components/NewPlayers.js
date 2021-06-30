@@ -19,7 +19,6 @@ export default function NewPlayer() {
     const myPlayers = getPlayersFromLocalStorage();
     setNewPlayers(myPlayers);
     const myPlayersCount = getPlayersCountFromLocalStorage();
-    console.log(myPlayersCount);
     if (myPlayersCount.length === 0) {
       setNumberOfPlayers(Number("0"));
     } else {
